@@ -4,3 +4,13 @@
 // - string: print "String value: <value>"
 // - number: print "Number value: <value>"
 // - boolean: print "Boolean value: <value>"
+
+function printValue(value: string | number | boolean): void {
+  if (typeof value === "string") {
+    console.log(`String value: ${value}`)
+  } else if (typeof value === "number") {
+    console.log(`Number value: ${value}`)
+  } else {
+    console.log(`Boolean value: ${value}`)
+  }
+}

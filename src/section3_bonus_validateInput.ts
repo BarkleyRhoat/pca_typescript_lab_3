@@ -5,3 +5,16 @@
 //
 // Return `true` if the input is valid, otherwise return `false`.
 // Use type narrowing (`typeof`, `in`) to handle each case.
+
+function validateInput(input: string | number | object): boolean {
+  if (typeof input === "string") {
+    return input.length > 0
+  }
+  if (typeof input === "number") {
+    return input > 0
+  }
+  if ("valid" in input && typeof input.valid === "boolean") {
+    return input.valid
+  }
+  return false
+}
